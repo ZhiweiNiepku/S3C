@@ -26,7 +26,6 @@ optimizer =  make_optimizer(model, lr, optimizer_name=optimizer_name)
 scheduler =  make_scheduler(optimizer, lr, training_loader, epochs, scheduler_name="CosineLR")
 # scheduler = None
 
-# checkpoint_path = "/mlx/users/mayiming.001/playground/maym/workspace/esm/ddG/prostata_muti_batch_ddp/checkpoint/filt/pretrain_cls_env_attention_cosine_e20.pt"
 checkpoint_path = "checkpoint/re_pretrain/pretrain_cls_env_attention_cosine_e4.pt"
 checkpoint = torch.load(checkpoint_path, map_location="cpu")
 model.load_state_dict(checkpoint, strict=False)
