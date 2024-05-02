@@ -25,12 +25,12 @@ Download the checkpoint of S3C and modify the paths in the code.
 | Checkpoint on S6070 | [link](https://figshare.com/ndownloader/files/46044900) |
 
 To test S3C on different test datas, please run
-"""
+"""python
 python test.py
 """
 ## Model training
 To train S3C on downstream tasks from scratch, please run
-"""
+"""python
 python train.py
 """
 ## License
