@@ -3,18 +3,6 @@ from .ddg_dataset import DdgData, ddG_Dataset, ProteinDataset
 from torch.utils.data import DataLoader
 
 def make_dataloader(train_dataset_path="", test_dataset_path="", batch_size=8, is_training=True):
-    # if is_training:
-    #     train_df = pd.read_csv(train_dataset_path)
-    #     test_df = pd.read_csv(test_dataset_path)
-    #     train_ds, test_ds = ProteinDataset(train_df), ProteinDataset(test_df)
-    #     training_loader = DataLoader(train_ds, batch_size=1, num_workers = 8, shuffle = True)
-    #     testing_loader = DataLoader(test_ds, batch_size=1, num_workers = 8)
-    #     return training_loader, testing_loader
-    # else:
-    #     test_df = pd.read_csv(test_dataset_path)
-    #     test_ds = ProteinDataset(test_df)
-    #     testing_loader = DataLoader(test_ds, batch_size=1, num_workers = 8)
-    #     return testing_loader
     if is_training:
         train_data, test_data = DdgData(train_dataset_path), DdgData(test_dataset_path)
 

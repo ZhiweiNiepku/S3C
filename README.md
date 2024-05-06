@@ -16,7 +16,8 @@ Protein stability offers valuable insights into protein folding and functionalit
 The experiments are tested on one Tesla V100 (32GB).
 
 ## Data
-Training and testing data are in the "data" folder
+Training and testing data are in the "data" folder.
+Download mega-scale dataset for training at [mega-scale dataset](https://zenodo.org/records/7401275)
 
 ## Model inference
 Download the checkpoint of S3C and modify the paths in the code.

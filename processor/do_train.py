@@ -13,11 +13,9 @@ def do_train(model, optimizer, scheduler, training_loader, testing_loader, devic
         model.train()
         tr_loss = 0.0
         nb_tr_examples, nb_tr_steps = 0, 0
-        # pbar = tqdm(training_loader)
         for idx, batch in enumerate(training_loader):
             optimizer.zero_grad()
             input_ids1, input_ids2, pos, labels, classes = batch
-            # input_ids1, input_ids2, pos, labels = batch
         
             input_ids1 = input_ids1.to(device)
             input_ids2 = input_ids2.to(device)
@@ -40,23 +38,17 @@ def do_train(model, optimizer, scheduler, training_loader, testing_loader, devic
             scaler.step(optimizer)
             scale = scaler.get_scale()
             scaler.update()
-            # scheduler.step()
         scheduler.step(epoch)
         
         epoch_loss = tr_loss / nb_tr_steps
         print(f"Training loss epoch: {epoch_loss}")
 
         labels, predictions = do_valid(model, testing_loader, device)
-        # , lr {scheduler._get_lr(epoch)[0]}
         print(f'RMSE {np.sqrt(np.mean((labels-predictions)**2))} MAE {np.mean(np.abs(labels - predictions))} \
             Correlation {stats.spearmanr(labels, predictions)}, Pearsonr {pearsonr(labels, predictions)[0]}')
         
-        if epoch == 14 or epoch == 4:
-            print("saving model...")
-            torch.save(model.state_dict(), "checkpoint/task13/myoglobin.pt")
-
     print("saving model...")
-    torch.save(model.state_dict(), "checkpoint/task13/myoglobin.pt")
+    torch.save(model.state_dict(), "checkpoint/training.pt")
 
 
 def do_valid(model, testing_loader, device):

@@ -19,15 +19,10 @@ class ProteinDataset(Dataset):
         return len(self.df)
 
 def data_frame_to_list(dataframe):
-    # --> 获取dateframe的header
     header = ["wt_seq", "mut_seq", "ddg", "pos"]
-    # --> 获取dateframe的长度
     lenOfDate = len(dataframe)
-    # --> 转化后的list
     listOfdate = []
-    # --> 读取每一行
     for raw in range(lenOfDate):
-        # --> 每一行的list
         listTemp = []
         for name in header:
             listTemp.append(dataframe.iloc[raw][name])
@@ -59,7 +54,6 @@ class DdgData(object):
                 cls.append(1)
             else:
                 cls.append(0)
-        # --> 自动补全
         wild_labels, wild_strs, wild_tokens = self.tokenizer(wild_seqs)
         mutation_labels, mutation_strs, mutant_tokens = self.tokenizer(mutation_seqs)
         positions = torch.tensor(positions)
@@ -70,18 +64,3 @@ class DdgData(object):
     
     def __len__(self):
         return len(self.ddGs)
-
-class ddG_Dataset(torch.utils.data.Dataset):
-    def __init__(self, wild_tokens, mutant_tokens, positions, ddGs, cls):
-        
-        self.wild_tokens = wild_tokens
-        self.mutant_tokens = mutant_tokens
-        self.positions = positions
-        self.ddGs = ddGs
-        self.cls = cls
-    
-    def __len__(self):
-        return len(self.ddGs)
-    
-    def __getitem__(self, index):
-        return (self.wild_tokens[index], self.mutant_tokens[index], self.positions[index], self.ddGs[index].float(), self.cls[index])
