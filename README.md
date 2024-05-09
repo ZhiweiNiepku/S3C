@@ -1,5 +1,5 @@
 # S3C
-The official code of "Towards anchoring evolutionary fitness for protein stability with virtual chemical environment recovery"
+The official code of "Towards anchoring evolutionary fitness for protein stability with virtual chemical environment recovery"[bioRxiv](https://www.biorxiv.org/content/10.1101/2024.04.22.590665v1.abstract) 
 ![Our pipeline](./figs/fig1.png)
 
 ## Table of Contents
