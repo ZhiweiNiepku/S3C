@@ -4,7 +4,7 @@ The official code of ["Towards anchoring evolutionary fitness for protein stabil
 
 ## Table of Contents
 - [Overview](#overview)
-- [Get Started](#get started)
+- [Get Started](#get-started)
 - [Data](#data)
 - [Model inference](#model-inference)
 - [Model training](#model-training)
