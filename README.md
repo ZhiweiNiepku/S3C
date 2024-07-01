@@ -4,6 +4,7 @@ The official code of "Towards anchoring evolutionary fitness for protein stabili
 
 ## Table of Contents
 - [Overview](#overview)
+- [Get Started](#get started)
 - [Data](#data)
 - [Model inference](#model-inference)
 - [Model training](#model-training)
@@ -14,6 +15,11 @@ Protein stability offers valuable insights into protein folding and functionalit
 ## Hardware requirements
 
 The experiments are tested on one Tesla V100 (32GB).
+## Get Started
+Build the environment.
+```python
+pip install -r requirements.txt
+```
 
 ## Data
 Training and testing data are in the "data" folder.
