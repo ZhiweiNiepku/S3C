@@ -77,7 +77,7 @@ def do_valid(model, testing_loader, device):
             eval_preds.extend(logits.cpu().detach())
             
     labels = [id.item() for id in eval_labels]
-    predictions = [id.item() for id in eval_preds]
+    predictions = [id.item() for id in eval_preds]w
     
     eval_loss = eval_loss / nb_eval_steps
     print(f"Validation Loss: {eval_loss}")
