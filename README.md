@@ -24,12 +24,14 @@ pip install -r requirements.txt
 ## Data
 Training and testing data are in the "data" folder.
 Download mega-scale dataset for training at [mega-scale dataset](https://zenodo.org/records/7401275)
+Download C2878 and T2837 dataset at [stability oracle dataset](github.com/danny305/StabilityOracle)
 
 ## Model inference
 Download the checkpoint of S3C and modify the paths in the code.
 | Content  | Link  |
 | ----- | -----|
 | Checkpoint on S6070 | [link](https://figshare.com/ndownloader/files/46044900) |
+| Checkpoint on C2878 | [link](https://figshare.com/ndownloader/files/46044900) |
 
 To test S3C on different test datas, please run
 ```python
